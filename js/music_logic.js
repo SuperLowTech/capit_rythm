@@ -1,5 +1,4 @@
 //array to receive input barcode
-
 var counstituent_sound =[];
 var barcode;
 var arrpegio;

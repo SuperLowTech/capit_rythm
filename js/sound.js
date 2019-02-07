@@ -46,20 +46,30 @@ $(function(){
         melody_data.push(null);
 
       }
-      play_music();
       
       var synth = new Tone.PolySynth().toMaster();
 
       function addMelody(time, note) {
           synth.triggerAttackRelease(note, '16n', time);
       }
+      
       var melody = new Tone.Sequence(addMelody, melody_data ).start();
       Tone.Transport.bpm.value = 180;
-      
-      function play_music() {
-        //alert(chord_player(0));
-        Tone.Transport.start();
-      }
+      Tone.Transport.start();
 
+      $("#stop").click(function(){
+        Tone.Transport.stop();
+      })
+      
+      $("#clear").click(function(){
+        alert('工事中');
+        /*
+        counstituent_sound =[];
+        barcode ='';
+        arrpegio=[];
+        chord_progress = [];
+        $(".display_area").text(chord_progress);
+        */
+      })
     })
   });
